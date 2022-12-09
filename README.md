@@ -11,4 +11,4 @@ Search by sender, quick read, then mark as read, without the hassle.
 1. See message list to confirm that they are not important
 1. Click button `2. Mark All Read`. The UI should automatically go back to step 1
 
-![gmail-search-by-sender2](https://user-images.githubusercontent.com/451487/206713308-789c5534-bc98-45c2-84a7-d633e17b5227.png)
+![gmail-search-by-sender3](https://user-images.githubusercontent.com/451487/206716975-d6674eff-3b5d-498e-8f25-529e40a92dee.png)
