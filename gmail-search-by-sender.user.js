@@ -1,7 +1,8 @@
 // ==UserScript==
 // @name         GMail Search by Sender
 // @namespace    https://latinsud.com/
-// @version      0.2
+// @supportURL   https://github.com/LatinSuD/gmail-search-by-sender/
+// @version      0.3
 // @description  Search by sender, quick read, then mark as read, without the hassle
 // @author       LatinSuD
 // @match        https://mail.google.com/mail/*
@@ -57,7 +58,7 @@
                     setTimeout(function() { history.back(); }, 1);
                 }
             })
-        }, 1);
+        }, 2);
 
     }
 
@@ -92,18 +93,31 @@
         // Add buttons
 
         myDiv=document.createElement('DIV')
-        myDiv.innerHTML="<button type='button' class='my-gmail-search-by-sender' style='margin-right: 0.5em; cursor: pointer' onclick=myfunc1>1. Search 1st</button>"
+        let myElem=document.createElement('BUTTON')
+        myElem.type='button';
+        myElem.className='my-gmail-search-by-sender';
+        myElem.style='margin-right: 0.5em; cursor: pointer';
+        //myElem.onclick=myfunc1;
+        myElem.textContent="1. Search 1st";
+        //myDiv.innerHTML="<button type='button' class='my-gmail-search-by-sender' style='margin-right: 0.5em; cursor: pointer' onclick=myfunc1>1. Search 1st</button>"
+        myDiv.appendChild(myElem);
         myDiv.style.zIndex=9999;
-        myDiv.addEventListener('click', myfunc1)
-        if (myBar) {
+        myDiv.addEventListener('click', myfunc1);
+        if (myBar && myBar.children[0] && myBar.children[0].children[0]) {
             myBar.children[0].children[0].append(myDiv)
         }
 
-        myDiv=document.createElement('DIV')
-        myDiv.innerHTML="<button type='button' style='margin-right: 0.5em; cursor: pointer' onclick=myfunc2>2. Mark All Read</button>"
+        myDiv=document.createElement('DIV');
+        myElem=document.createElement('BUTTON')
+        myElem.type='button';
+        myElem.style='margin-right: 0.5em; cursor: pointer';
+        //myElem.onclick=myfunc2;
+        myElem.textContent="2. Mark All Read";
+        myDiv.appendChild(myElem);
+        //myDiv.innerHTML="<button type='button' style='margin-right: 0.5em; cursor: pointer' onclick=myfunc2>2. Mark All Read</button>"
         myDiv.style.zIndex=9999;
         myDiv.addEventListener('click', myfunc2)
-        if (myBar) {
+        if (myBar && myBar.children[0] && myBar.children[0].children[0]) {
             myBar.children[0].children[0].append(myDiv)
         }
 
